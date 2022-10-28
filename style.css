@@ -8,25 +8,20 @@
 }
 body{
   display: flex;
-  padding: 5vh;
   min-height: 100%;
   min-width: 100%;
   align-items: center;
-  background: #E3F2FD;
+  background: #592a16;
 }
 td{
-  width: 30px;
-  height: 30px;
-  border: black solid 1px;
+
 }
 table{
   display: none;
 }
 .container{
-  padding: 30px 35px 35px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  padding: 30px 35px 0px;
+  background: #592a16;
 }
 .container.disable .editor-panel,
 .container.disable .controls .reset-filter,
@@ -41,11 +36,10 @@ table{
 }
 .container .wrapper{
   display: flex;
-  margin: 20px 0;
+  margin: 20px -35px;
 }
 .wrapper .editor-panel{
   padding: 15px 20px;
-  width: 280px;
   border-radius: 5px;
   border: 1px solid #ccc;
 }
@@ -57,7 +51,6 @@ table{
 .editor-panel .options, .controls{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 .editor-panel button{
   outline: none;
@@ -70,18 +63,22 @@ table{
   border: 1px solid #aaa;
 }
 .editor-panel .filter button{
-  width: calc(100% / 2 - 4px);
+  background: #b8caff;
 }
 .editor-panel button:hover{
-  background: #f5f5f5;
+  background: #5981ff;
 }
 .filter button.active{
   color: #fff;
   border-color: #5372F0;
   background: #5372F0;
 }
-.filter .slider{
-  margin-top: 12px;
+.filter .filter-img{
+  width: 120px;
+  border-radius: 5px;
+}
+.filter .filter-img:hover{
+  box-shadow: 0px 0px 5px #4cff37;
 }
 .filter .slider .filter-info{
   display: flex;
@@ -90,9 +87,10 @@ table{
   justify-content: space-between;
 }
 .filter .slider input{
-  width: 100%;
-  height: 5px;
-  accent-color: #5372F0;
+  width: calc(100% - 11px);
+}
+input[type=range]{
+  background: #592a16;
 }
 .editor-panel .rotate{
   margin-top: 17px;
@@ -146,23 +144,13 @@ table{
   text-transform: uppercase;
 }
 .controls .reset-filter{
-  color: #6C757D;
-  border: 1px solid #6C757D;
+  border-radius: 7px;
+  height: 70px;
+  z-index: 100;
 }
 .controls .reset-filter:hover{
-  color: #fff;
-  background: #6C757D;
+  box-shadow: 0px 0px 5px #4cff37;
 }
-.controls .choose-img{
-  background: #6C757D;
-  border: 1px solid #6C757D;
-}
-.controls .save-img{
-  margin-left: 5px;
-  background: #5372F0;
-  border: 1px solid #5372F0;
-}
-
 @media screen and (max-width: 760px) {
   .container{
     padding: 25px;
@@ -191,7 +179,33 @@ table{
     margin-left: 0px;
   }
 }
+#setka{
+  margin-left: 14px;
+  height: 88px;
+  width: 88px;
+  border-radius: 8px;
+  background: url("Картинки/интерфейс/sohr.png");
+}
+#setka:hover{
+  background: url("Картинки/интерфейс/sohrON.png");
+}
+.group{
+  width: 120px;
+  height: 120px;
+  margin: 10px 40px;
 
+}
+.group img{
+  width: 150px;
+  height: 150px;
+  position: absolute;
+}
+.row{
+  width: 147px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+}
 .popup{
   position: fixed;
   z-index: 999999;
@@ -211,12 +225,26 @@ table{
   padding: 30px 10px;
 }
 .popup_content{
-  background-color: white;
-  color: black;
-  max-width: 1200px;
+  background: url(Картинки/интерфейс/лист.png);
+  color: #ffffff;
+  text-decoration: none;
+  max-width: 1167px;
   padding: 30px;
   position: relative;
   border-radius: 10px;
+}
+.popup_content a{
+  color: #7ee0cf;
+}
+.popup_text{
+  display: flex;
+  flex-wrap: wrap;
+}
+.volume{
+  cursor: pointer;
+  width: 44px;
+  border-radius: 10px;
+  vertical-align: bottom;
 }
 .pcl{
   position: absolute;
@@ -225,6 +253,14 @@ table{
   font-size: 20px;
   color: red;
   text-decoration: none;
+  min-width: 30px;
+  min-height: 30px;
+  background: url(Картинки/интерфейс/закрыть.png);
+  transition: 0.5s;
+  border-radius: 12px;
+}
+.pcl:hover{
+  background: url(Картинки/интерфейс/Images_LOBBY_DELSAVE_BUTTON_CLASS.png);
 }
 .visible{
   display: block;
@@ -237,6 +273,9 @@ table{
 }
 .hide{
   display: none;
+}
+.pointer-image img{
+  cursor: pointer;
 }
 .margin5{
   margin: 5px;

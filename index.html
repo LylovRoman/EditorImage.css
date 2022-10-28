@@ -2,37 +2,60 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Image Editor JavaScript | CodingNepal</title>
+    <title>๖ۣۜOrion Sandbox creative</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slider.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="иконка.ico" type="image/x-icon">.
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
-
   </head>
   <body>
+  <div style="position: absolute; display: flex; min-width: 100%; top: 0px; left: 0px; height: 50px; z-index: 1; margin-left: auto; margin-right: auto;"></div>
+  <img id="lenta" src="Картинки/интерфейс/перекладина.png">
+  <img style="position: absolute; top: 0px; left: 0px; height: 50px; width: 205px; margin: 0px; z-index: 2;" src="Картинки/интерфейс/сундучка.png">
     <div class="container disable">
-        <h2>Редактор </h2>
+        <img id="polosa" src="Картинки/интерфейс/полоса.png">
         <div class="wrapper">
-            <div class="editor-panel">
-                <div class="filter">
-                    <label class="title">Фильтры</label>
-                    <div class="options">
-                        <button id="brightness" class="active">Яркость</button>
-                        <button id="saturation">Насыщенность</button>
-                        <button id="inversion">Инверсия</button>
-                        <!-- button id="grayscale">Grayscale</button -->
-                        <button id="rotate">Вращение</button>
-                    </div>
-                    <div class="slider">
-                        <div class="filter-info">
-                            <p class="name">Яркость</p>
-                            <p class="value">100%</p>
-                        </div>
-                        <input type="range" value="100" min="0" max="200">
-                    </div>
+            <div class="pointer-image" style="display: flex; flex-direction: column;">
+                <div class="hide hide-self" id="creatures-div">
+                    <img src="Картинки/интерфейс/Без%20названия61_20220930182602.png" style="z-index: 9002; width: 180px; position: absolute; transform: translate(40px, 15px)">
+                    <img src="Картинки/интерфейс/лента.png" style="z-index: 9001; height: 120px; width: 500px; position: absolute; transform: translate(210px, 15px)">
+                    <img id="friend-creatures" class="popup_caller" src="Картинки/интерфейс/Без%20названия61_20221004185606.png" style="z-index: 9002; height: 110px; position: absolute; transform: translate(250px, 20px)">
+                    <img id="enemy-creatures" class="popup_caller" src="Картинки/интерфейс/Без%20названия61_20221004185533.png" style="z-index: 9002; height: 110px; position: absolute; transform: translate(400px, 20px)">
+                    <img id="boss-creatures" class="popup_caller" src="Картинки/интерфейс/Без%20названия61_20221004185552.png" style="z-index: 9002; height: 110px; position: absolute; transform: translate(550px, 20px)">
                 </div>
-                <div class="rotate">
+                <div class="hide hide-self" id="item-div">
+                    <img src="Картинки/интерфейс/Без%20названия61_20220930182602.png" style="z-index: 9002; width: 180px; position: absolute; transform: translate(40px, 150px)">
+                    <img src="Картинки/интерфейс/лента.png" style="z-index: 9001; height: 120px; width: 650px; position: absolute; transform: translate(210px, 150px)">
+                    <img id="weapon-item" class="popup_caller" src="Картинки/интерфейс/Без%20названия61_20221004185257.png" style="z-index: 9002; height: 110px; position: absolute; transform: translate(250px, 155px)">
+                    <img id="tool-item" class="popup_caller" src="Картинки/интерфейс/кирка.png" style="z-index: 9002; height: 110px; position: absolute; transform: translate(400px, 155px)">
+                    <img id="resource-item" class="popup_caller" src="Картинки/интерфейс/Без%20названия61_20221004185315.png" style="z-index: 9002; height: 110px; position: absolute; transform: translate(550px, 155px)">
+                    <img id="active-item" class="popup_caller" src="Картинки/интерфейс/Без%20названия61_20221004185119.png" style="z-index: 9002; height: 110px; position: absolute; transform: translate(700px, 155px)">
+                </div>
+                <div class="hide hide-self" id="block-div">
+                    <img src="Картинки/интерфейс/Без%20названия61_20220930182602.png" style="z-index: 9002; width: 180px; position: absolute; transform: translate(40px, 290px)">
+                    <img src="Картинки/интерфейс/лента.png" style="z-index: 9001; height: 120px; width: 650px; position: absolute; transform: translate(210px, 285px)">
+                    <img id="hard-block" class="popup_caller" src="Картинки/интерфейс/Без%20названия61_20221004185506.png" style="z-index: 9002; height: 110px; position: absolute; transform: translate(250px, 290px)">
+                    <img id="soft-block" class="popup_caller" src="Картинки/интерфейс/Без%20названия61_20221004185450.png" style="z-index: 9002; height: 110px; position: absolute; transform: translate(400px, 290px)">
+                    <img id="furniture-block" class="popup_caller" src="Картинки/интерфейс/Без%20названия61_20221004185434.png" style="z-index: 9002; height: 110px; position: absolute; transform: translate(550px, 290px)">
+                    <img id="plant-block" class="popup_caller" src="Картинки/интерфейс/Без%20названия61_20221004185405.png" style="z-index: 9002; height: 110px; position: absolute; transform: translate(700px, 290px)">
+                </div>
+                <!--div class="hide hide-self" id="human-div">
+                    <img src="Картинки/интерфейс/Без%20названия61_20220930182602.png" style="z-index: 9002; width: 230px; position: absolute; transform: translate(20px, 590px)">
+                    <img src="Картинки/интерфейс/лента.png" style="z-index: 9001; height: 158px; width: 965px; position: absolute; transform: translate(230px, 590px)">
+                    <img id="manhead-human" class="popup_caller" src="Картинки/интерфейс/Без%20названия61_20221003220127.png" style="z-index: 9002; height: 140px; position: absolute; transform: translate(250px, 599px)">
+                    <img id="womanhead-human" class="popup_caller" src="Картинки/интерфейс/Без%20названия61_20221003215958.png" style="z-index: 9002; height: 140px; position: absolute; transform: translate(400px, 599px)">
+                    <img id="manbody-human" class="popup_caller" src="Картинки/интерфейс/Без%20названия61_20221003215842.png" style="z-index: 9002; height: 140px; position: absolute; transform: translate(550px, 599px)">
+                    <img id="womanbody-human" class="popup_caller" src="Картинки/интерфейс/Без%20названия61_20221003215930.png" style="z-index: 9002; height: 140px; position: absolute; transform: translate(700px, 599px)">
+                    <img id="manlegs-human" class="popup_caller" src="Картинки/интерфейс/Без%20названия61_20221003222027.png" style="z-index: 9002; height: 140px; position: absolute; transform: translate(850px, 599px)">
+                    <img id="womanlegs-human" class="popup_caller" src="Картинки/интерфейс/Без%20названия61_20221003215814.png" style="z-index: 9002; height: 140px; position: absolute; transform: translate(1000px, 599px)">
+                </div-->
+                <img src="Картинки/интерфейс/Zомби.png" class="group btn" id="creatures" style="z-index: 1">
+                <img src="Картинки/интерфейс/items.png" class="group btn" id="item" style="z-index: 1">
+                <img src="Картинки/интерфейс/блоки.png" class="group btn" id="block" style="z-index: 1">
+                <!--img src="Картинки/интерфейс/люди.png" class="group btn" id="human" style="z-index: 1"-->
+                <!--div class="rotate">
                     <label class="title">Управление</label>
                     <div class="options">
                         <button id="left"><i class="fa-solid">←</i></button>
@@ -43,351 +66,1335 @@
                         <button id="horizontal"><i class='bx bx-reflect-vertical'></i></button>
                         <button id="vertical"><i class='bx bx-reflect-horizontal' ></i></button>
                     </div>
-                </div>
+                </div-->
             </div>
             <div id="logo" class="preview-img" style="width: 1472px">
-                <table class="visible" style="z-index: 999999">
+                <img src="Картинки/вещи/ФОНёлки.png" style="pointer-events: none; position: absolute; z-index: 17; transform: translate(400px, 320px) rotate(0deg) scale(1, 1); filter: brightness(100%) saturate(100%) invert(0%) grayscale(0%);">
+                <img src="Картинки/вещи/ФОНёлки.png" style="pointer-events: none; position: absolute; z-index: 16; transform: translate(-400px, 320px) rotate(0deg) scale(-1, 1); filter: brightness(100%) saturate(100%) invert(0%) grayscale(0%);">
+                <img src="Картинки/вещи/ФОНобъектОблакоВолна.png" style="pointer-events: none; position: absolute; z-index: 15; transform: translate(16px, -16px) rotate(0deg) scale(-1, 1); filter: brightness(100%) saturate(100%) invert(0%) grayscale(0%);">
+                <img src="Картинки/вещи/ФОНобъектОблакоНорм.png" style="pointer-events: none; position: absolute; z-index: 14; transform: translate(656px, 80px) rotate(0deg) scale(-1, 1); filter: brightness(100%) saturate(100%) invert(0%) grayscale(0%);">
+                <img src="Картинки/вещи/ФОНобъектОблакоНорм.png" style="pointer-events: none; position: absolute; z-index: 13; transform: translate(624px, 48px) rotate(0deg) scale(-1, 1); filter: brightness(100%) saturate(100%) invert(0%) grayscale(0%);">
+                <img src="Картинки/вещи/ФОНобъектОблакоНорм.png" style="pointer-events: none; position: absolute; z-index: 12; transform: translate(592px, 48px) rotate(0deg) scale(-1, 1); filter: brightness(100%) saturate(100%) invert(0%) grayscale(0%);">
+                <img src="Картинки/вещи/ФОНобъектОблакоНорм.png" style="pointer-events: none; position: absolute; z-index: 11; transform: translate(624px, -176px) rotate(0deg) scale(-1, 1); filter: brightness(100%) saturate(100%) invert(0%) grayscale(0%);">
+                <img src="Картинки/вещи/ФОНобъектОблакоБиг.png" style="pointer-events: none; position: absolute; z-index: 10; transform: translate(336px, -240px) rotate(0deg) scale(-1, 1); filter: brightness(100%) saturate(100%) invert(0%) grayscale(0%);">
+                <img src="Картинки/вещи/ФОНобъектПланета.png" style="pointer-events: none; position: absolute; z-index: 9; transform: translate(144px, -368px) rotate(0deg) scale(-1, 1); filter: brightness(100%) saturate(100%) invert(0%) grayscale(0%);">
+                <img src="Картинки/вещи/ФОНкосмос.png" style="pointer-events: none; position: absolute; z-index: 8; transform: translate(400px, -256px) rotate(0deg) scale(-1, 1); filter: brightness(100%) saturate(100%) invert(0%) grayscale(0%);">
+                <img src="Картинки/вещи/ФОНобъектОблакаСмол.png" style="pointer-events: none; position: absolute; z-index: 7; transform: translate(-528px, -240px) rotate(0deg) scale(1, 1); filter: brightness(100%) saturate(100%) invert(0%) grayscale(0%);">
+                <img src="Картинки/вещи/ФОНобъектЛунакрупная.png" style="pointer-events: none; position: absolute; z-index: 6; transform: translate(-560px, -304px) rotate(0deg) scale(1, 1); filter: brightness(100%) saturate(100%) invert(0%) grayscale(0%);">
+                <img src="Картинки/вещи/ФОНгоры.png" style="pointer-events: none; position: absolute; z-index: 5; transform: translate(400px, 320px) rotate(0deg) scale(1, 1); filter: brightness(100%) saturate(100%) invert(0%) grayscale(0%);">
+                <img src="Картинки/вещи/ФОНгоры.png" style="pointer-events: none; position: absolute; z-index: 4; transform: translate(-400px, 320px) rotate(0deg) scale(1, 1); filter: brightness(100%) saturate(100%) invert(0%) grayscale(0%);">
+                <img src="Картинки/вещи/ФОНкосмос.png" style="pointer-events: none; position: absolute; z-index: 3; transform: translate(-400px, 256px) rotate(0deg) scale(1, -1); filter: brightness(100%) saturate(100%) invert(0%) grayscale(0%);">
+                <img src="Картинки/вещи/ФОНкосмос.png" style="pointer-events: none; position: absolute; z-index: 2; transform: translate(400px, 256px) rotate(0deg) scale(-1, -1); filter: brightness(100%) saturate(100%) invert(0%) grayscale(0%);">
+                <img src="Картинки/вещи/ФОНкосмос.png" style="pointer-events: none; position: absolute; z-index: 1; transform: translate(-400px, -256px) rotate(0deg) scale(1, 1); filter: brightness(100%) saturate(100%) invert(0%) grayscale(0%);">
+                <table class="visible" style="z-index: 9000;">
                 </table>
             </div>
         </div>
         <div class="controls">
-            <button class="reset-filter">Убрать фильтры</button>
-            <div class="row">
-                <button class="choose-img" id="setka">#</button>
-                <button class="choose-img btn" id="block">Блоки</button>
-                <button class="choose-img btn" id="item">Вещи</button>
-                <button class="choose-img btn" id="creatures">Существа</button>
-                <img class="btn" id="settings" width="42px" src="Картинки/интерфейс/шестерёнка.png">
-                <!--img class="btn" id="music" width="44px" src="Картинки/интерфейс/Без%20названия94_20220910183529.png" style="vertical-align: bottom;">
-                <img class="btn hide" id="off-music" width="44px" src="Картинки/интерфейс/Без%20названия94_20220910183514.png" style="vertical-align: bottom;">
-                <input id="volume" type="range" value="100" min="0" max="100" style="vertical-align: bottom; margin-bottom: 14px;"-->
+            <img style="margin-right: auto;" class="reset-filter" src="Картинки/интерфейс/убратьфильтры.png">
+            <div class="editor-panel">
+                <div class="filter">
+                    <div>
+                        <img class="filter-img active" id="brightness" src="Картинки/интерфейс/яркость.png">
+                        <img class="filter-img" id="saturation" src="Картинки/интерфейс/насыщенность.png">
+                        <img class="filter-img" id="inversion" src="Картинки/интерфейс/инверсия.png">
+                        <!-- button id="grayscale">Grayscale</button -->
+                        <img class="filter-img" id="rotate" src="Картинки/интерфейс/вращение.png">
+                    </div>
+                    <div class="slider" style="display: flex">
+                        <!--div class="filter-info">
+                            <p class="name">Яркость</p>
+                            <p class="value">100%</p>
+                        </div-->
+                        <input type="range" value="100" min="0" max="200">
+                        <img src="Картинки/интерфейс/пимпа.png" style="z-index: 0; height: 22px">
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100px; display: flex; justify-content: center; align-items: center; margin-left: 10px">
+                <img src="Картинки/интерфейс/слот.png" style="width: 100px; height: 100px; position: absolute; border-radius: 8px">
+                <img id="slot" src="Картинки/интерфейс/пусто.png" style="width: 90px; max-height: 90px; position: absolute;">
+            </div>
+            <div class="row" style="margin-left: auto;">
+                <div style="display: flex; flex-direction: column; width: 44px">
+                    <img class="btn popup_caller" id="settings" width="44px" src="Картинки/интерфейс/шестерёнка.png">
+                    <img class="volume btn" id="music" src="Картинки/интерфейс/yell.png">
+                    <img class="volume btn hide" id="off-music" src="Картинки/интерфейс/blek.png">
+                </div>
+                <button class="choose-img" id="setka"></button>
             </div>
         </div>
     </div>
-    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-    <div id="popup_block" class="popup popup_close">
+    <div id="popup_friend-creatures" class="popup popup_close">
         <div class="popup_body">
             <div class="popup_content">
-                <a href="" class="popup_close pcl pcl">✕</a>
+                <img src="" class="popup_close pcl">
                 <div class="popup_text">
-                    <img src="Картинки/блоки/Images_ITEM_4_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_5_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_6_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_7_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_8_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_9_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_11_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_12_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_13_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_14_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_15_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_16_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_17_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_18_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_258_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_259_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_265_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_266_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_267_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_268_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_269_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_271_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_272_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_273_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_281_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_282_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_283_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_285_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_286_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_314_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_317_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_318_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_325_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_329_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_331_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_332_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_337_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_361_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_362_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_363_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_372_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_373_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_374_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_375_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_376_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_377_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_378_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_419_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_275_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_276_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_278_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_289_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_290_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_291_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_293_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_297_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_298_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_299_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_300_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_301_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_302_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_303_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_313_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_315_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_316_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_320_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_321_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_322_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_323_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_324_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_334_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_335_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_339_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_342_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_350_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_351_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_357_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_371_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_381_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_382_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_383_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_384_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_386_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_387_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_388_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_389_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_390_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_402_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_407_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_414_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_420_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_1101_CLASS.png" class="load">
-                    <img src="Картинки/блоки/Images_ITEM_1121_CLASS.png" class="load">
-                    <img src="Картинки/блоки/алхим%20стол.png" class="load">
-                    <img src="Картинки/блоки/батарея.png" class="load">
-                    <img src="Картинки/блоки/дверьдефолтзакр.png" class="load">
-                    <img src="Картинки/блоки/дверьдефолтоткр.png" class="load">
-                    <img src="Картинки/блоки/дверьжелеззакр.png" class="load">
-                    <img src="Картинки/блоки/дверьжелезоткр.png" class="load">
-                    <img src="Картинки/блоки/ёлкабиг.png" class="load">
-                    <img src="Картинки/блоки/ёлкамини.png" class="load">
-                    <img src="Картинки/блоки/знамязел.png" class="load">
-                    <img src="Картинки/блоки/знамякрас.png" class="load">
-                    <img src="Картинки/блоки/знамяоранж.png" class="load">
-                    <img src="Картинки/блоки/знамясин.png" class="load">
-                    <img src="Картинки/блоки/знамяфиол.png" class="load">
-                    <img src="Картинки/блоки/знамячёрн.png" class="load">
-                    <img src="Картинки/блоки/знамяяпон.png" class="load">
-                    <img src="Картинки/блоки/картина2на2.1.png" class="load">
-                    <img src="Картинки/блоки/картина2на2.2.png" class="load">
-                    <img src="Картинки/блоки/картина2на2.3.png" class="load">
-                    <img src="Картинки/блоки/картинабосс.png" class="load">
-                    <img src="Картинки/блоки/картинаещёодна.png" class="load">
-                    <img src="Картинки/блоки/картиналох.png" class="load">
-                    <img src="Картинки/блоки/картинамегалох.png" class="load">
-                    <img src="Картинки/блоки/ККО.png" class="load">
-                    <img src="Картинки/блоки/кНига.png" class="load">
-                    <img src="Картинки/блоки/кроватьдефолт.png" class="load">
-                    <img src="Картинки/блоки/кроватьжелез.png" class="load">
-                    <img src="Картинки/блоки/кроватьэлит.png" class="load">
-                    <img src="Картинки/блоки/лавка.png" class="load">
-                    <img src="Картинки/блоки/люстрадефолт.png" class="load">
-                    <img src="Картинки/блоки/люстражелез.png" class="load">
-                    <img src="Картинки/блоки/люстраэлит.png" class="load">
-                    <img src="Картинки/блоки/обменник.png" class="load">
-                    <img src="Картинки/блоки/паутина.png" class="load">
-                    <img src="Картинки/блоки/печка.png" class="load">
-                    <img src="Картинки/блоки/питомникдефолт.png" class="load">
-                    <img src="Картинки/блоки/питомникэлит.png" class="load">
-                    <img src="Картинки/блоки/рудаалм.png" class="load">
-                    <img src="Картинки/блоки/рудажелез.png" class="load">
-                    <img src="Картинки/блоки/рудазол.png" class="load">
-                    <img src="Картинки/блоки/рудауголь.png" class="load">
-                    <img src="Картинки/блоки/саженец3.png" class="load">
-                    <img src="Картинки/блоки/саженец5.png" class="load">
-                    <img src="Картинки/блоки/сжигатель.png" class="load">
-                    <img src="Картинки/блоки/совунья.png" class="load">
-                    <img src="Картинки/блоки/станокдляевреев.png" class="load">
-                    <img src="Картинки/блоки/столбгаргульи.png" class="load">
-                    <img src="Картинки/блоки/столдефолт.png" class="load">
-                    <img src="Картинки/блоки/столжелез.png" class="load">
-                    <img src="Картинки/блоки/столэлит.png" class="load">
-                    <img src="Картинки/блоки/стулдефолт.png" class="load">
-                    <img src="Картинки/блоки/стулжелез.png" class="load">
-                    <img src="Картинки/блоки/стулэлит.png" class="load">
-                    <img src="Картинки/блоки/сундукдефолт.png" class="load">
-                    <img src="Картинки/блоки/трава5.png" class="load">
-                    <img src="Картинки/блоки/трава8.png" class="load">
-                    <img src="Картинки/блоки/трумтрумыч.png" class="load">
-                    <img src="Картинки/блоки/шкафкнижный.png" class="load">
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_124253.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-100px, 10px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_124311.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-105px, 5px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_124343.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-100px, 5px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_124434.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-100px, 5px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_124532.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-93px, 5px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_124818.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-100px, 5px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_125012.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-70px, 10px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_130600.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-80px, 5px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_130645.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-100px, 5px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220928_151939.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-95px, 5px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220928_152850.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-100px, 15px); width: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220928_153844.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-100px, 15px); width: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220928_155619.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-80px, 10px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220928_154944.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-100px, 15px); width: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220928_155712.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-100px, 5px); height: 90px; position: absolute;" src="Картинки/сущевства/Без%20названия106_20220928153258.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-103px, -12px); height: 90px; position: absolute;" src="Картинки/сущевства/Без%20названия107_20220928153710.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-95px, 5px); height: 90px; position: absolute;" src="Картинки/сущевства/Без%20названия108_20220928154448.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-95px, 5px); height: 90px; position: absolute;" src="Картинки/сущевства/Без%20названия109_20220928154617.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-100px, 10px); height: 90px; position: absolute;" src="Картинки/сущевства/Без%20названия110_20220928154839.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-103px, 10px); height: 90px; position: absolute;" src="Картинки/сущевства/Без%20названия111_20220928155127.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-95px, 20px); width: 90px; position: absolute;" src="Картинки/сущевства/Без%20названия112_20220928155304.png" class="load">
+                    </div>
+                    <div>
+                        <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                        <img style="transform: translate(-95px, 8px); height: 90px; position: absolute;" src="Картинки/сущевства/Без%20названия113_20220928155457.png" class="load">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="popup_item" class="popup popup_close">
-        <div class="popup_body">
-            <div class="popup_content">
-                <a href="" class="popup_close pcl">✕</a>
-                <div class="popup_text">
-                    <img src="Картинки/вещи/IMG_20220910_144653.png" class="load">
-                    <img src="Картинки/вещи/IMG_20220910_144717.png" class="load">
-                    <img src="Картинки/вещи/IMG_20220910_144745.png" class="load">
-                    <img src="Картинки/вещи/IMG_20220910_144810.png" class="load">
-                    <img src="Картинки/вещи/IMG_20220910_144827.png" class="load">
-                    <img src="Картинки/вещи/IMG_20220910_144907.png" class="load">
-                    <img src="Картинки/вещи/IMG_20220910_151319.png" class="load">
-                    <img src="Картинки/вещи/Без%20названия76_20220910151605.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1024_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1025_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1026_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1027_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1028_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1029_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1030_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1031_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1032_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1033_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1034_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1035_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1036_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1037_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1038_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1039_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1040_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1041_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1042_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1043_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1044_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1045_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1046_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1047_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1048_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1049_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1050_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1051_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1052_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1053_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1054_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1055_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1056_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1057_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1058_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1059_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1060_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1061_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1062_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1063_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1064_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1065_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1066_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1067_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1069_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1070_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1071_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1072_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1088_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1089_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1090_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1091_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1092_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1096_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1100_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1102_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1103_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1105_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1106_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1107_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1108_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1109_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1110_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1111_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1116_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1117_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1119_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1120_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1122_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1123_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1124_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1162_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1163_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1164_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1166_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1167_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1168_CLASS.png" class="load">
-                    <img src="Картинки/вещи/Images_ITEM_1176_CLASS.png" class="load">
-                    <img src="Картинки/вещи/ФОНгоры.png" class="load" style="width: 100px">
-                    <img src="Картинки/вещи/ФОНкосмос.png" class="load" style="width: 100px">
-                    <img src="Картинки/вещи/ФОНобъектЛунакрупная.png" class="load" style="width: 100px">
-                    <img src="Картинки/вещи/ФОНобъектОблакаСмол.png" class="load" style="width: 100px">
-                    <img src="Картинки/вещи/ФОНобъектОблакоБиг.png" class="load" style="width: 100px">
-                    <img src="Картинки/вещи/ФОНобъектОблакоВолна.png" class="load" style="width: 100px">
-                    <img src="Картинки/вещи/ФОНобъектОблакоНорм.png" class="load" style="width: 100px">
-                    <img src="Картинки/вещи/ФОНобъектПланета.png" class="load" style="width: 100px">
-                    <img src="Картинки/вещи/ФОНобъектСолнце.png" class="load" style="width: 100px">
-                    <img src="Картинки/вещи/ФОНёлки.png" class="load" style="width: 100px">
-                </div>
-            </div>
-        </div>
+    <div id="popup_enemy-creatures" class="popup popup_close">
+      <div class="popup_body">
+          <div class="popup_content">
+              <img src="" class="popup_close pcl">
+              <div class="popup_text">
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 0px); width: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_123806.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 35px); width: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_123905.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-97px, 35px); width: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_124010.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_124218.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_125001.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-98px, 10px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_125524.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 25px); width: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_125603.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_125734.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 15px); width: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_130347.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-85px, 5px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_141958.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-80px, 5px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220928_145347.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-93px, 10px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220928_152303.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-93px, 10px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220928_152716.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-80px, 10px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220928_154306.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-80px, 10px); height: 90px; position: absolute;" src="Картинки/сущевства/Image1034.png" class="load">
+                  </div>
+              </div>
+          </div>
+      </div>
     </div>
-    <div id="popup_creatures" class="popup popup_close">
-        <div class="popup_body">
-            <div class="popup_content">
-                <a href="" class="popup_close pcl">✕</a>
-                <div class="popup_text">
-                    <img src="Картинки/сущевства/IMG_20220910_123806.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_123905.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_124010.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_124218.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_124253.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_124311.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_124343.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_124434.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_124532.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_124818.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_125001.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_125012.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_125312.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_125524.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_125603.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_125734.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_130347.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_130600.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_130645.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220910_141958.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220928_143153.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220928_145347.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220928_151638.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220928_151939.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220928_152303.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220928_152716.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220928_152850.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220928_153844.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220928_154042.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220928_154306.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220928_154944.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220928_155619.png" class="load">
-                    <img src="Картинки/сущевства/IMG_20220928_155712.png" class="load">
-                    <img src="Картинки/сущевства/Без%20названия106_20220928153258.png" class="load">
-                    <img src="Картинки/сущевства/Без%20названия107_20220928153710.png" class="load">
-                    <img src="Картинки/сущевства/Без%20названия108_20220928154448.png" class="load">
-                    <img src="Картинки/сущевства/Без%20названия109_20220928154617.png" class="load">
-                    <img src="Картинки/сущевства/Без%20названия110_20220928154839.png" class="load">
-                    <img src="Картинки/сущевства/Без%20названия111_20220928155127.png" class="load">
-                    <img src="Картинки/сущевства/Без%20названия112_20220928155304.png" class="load">
-                    <img src="Картинки/сущевства/Без%20названия113_20220928155457.png" class="load">
-                </div>
-            </div>
-        </div>
+    <div id="popup_boss-creatures" class="popup popup_close">
+      <div class="popup_body">
+          <div class="popup_content">
+              <img src="" class="popup_close pcl">
+              <div class="popup_text">
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-90px, 10px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220910_125312.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); height: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220928_143153.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-97px, 35px); width: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220928_151638.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 25px); width: 90px; position: absolute;" src="Картинки/сущевства/IMG_20220928_154042.png" class="load">
+                  </div>
+              </div>
+          </div>
+      </div>
     </div>
+  <div id="popup_weapon-item" class="popup popup_close">
+      <div class="popup_body">
+          <div class="popup_content">
+              <img src="" class="popup_close pcl">
+              <div class="popup_text">
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-105px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/IMG_20220910_144653.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-105px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/IMG_20220910_144717.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-95px, 10px); width: 90px; position: absolute;" src="Картинки/вещи/IMG_20220910_144745.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 0px); width: 90px; position: absolute;" src="Картинки/вещи/IMG_20220910_144810.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, -5px); width: 90px; position: absolute;" src="Картинки/вещи/IMG_20220910_144827.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/IMG_20220910_144907.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 30px); width: 90px; position: absolute;" src="Картинки/вещи/IMG_20220910_151319.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 30px); width: 90px; position: absolute;" src="Картинки/вещи/Без%20названия76_20220910151605.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1064_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1065_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1066_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1067_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-95px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1069_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-95px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1070_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1071_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1072_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-95px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1096_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-95px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1162_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-95px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1163_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-95px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1176_CLASS.png" class="load">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="popup_tool-item" class="popup popup_close">
+      <div class="popup_body">
+          <div class="popup_content">
+              <img src="" class="popup_close pcl">
+              <div class="popup_text">
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 15px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1035_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1036_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1037_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1038_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1039_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1040_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1041_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1042_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1043_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1044_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1045_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1046_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1047_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1048_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1049_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1050_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1051_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1052_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1053_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1054_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1055_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1056_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1057_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1058_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1059_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1060_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1061_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1062_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1063_CLASS.png" class="load">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="popup_resource-item" class="popup popup_close">
+      <div class="popup_body">
+          <div class="popup_content">
+              <img src="" class="popup_close pcl">
+              <div class="popup_text">
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1024_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1025_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1026_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1027_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1028_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1029_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1030_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1031_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1032_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1033_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1034_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1100_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1102_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1103_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1105_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1119_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1120_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1122_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1123_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1124_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1164_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1166_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1167_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1168_CLASS.png" class="load">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="popup_active-item" class="popup popup_close">
+      <div class="popup_body">
+          <div class="popup_content">
+              <img src="" class="popup_close pcl">
+              <div class="popup_text">
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1088_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1089_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1090_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1091_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1092_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1106_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1107_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1108_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1109_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1110_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1111_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1116_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/Images_ITEM_1117_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 30px); width: 90px; position: absolute;" src="Картинки/вещи/ФОНгоры.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 25px); width: 90px; position: absolute;" src="Картинки/вещи/ФОНкосмос.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/ФОНобъектЛунакрупная.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 30px); width: 90px; position: absolute;" src="Картинки/вещи/ФОНобъектОблакаСмол.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 30px); width: 90px; position: absolute;" src="Картинки/вещи/ФОНобъектОблакоБиг.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 30px); width: 90px; position: absolute;" src="Картинки/вещи/ФОНобъектОблакоВолна.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 30px); width: 90px; position: absolute;" src="Картинки/вещи/ФОНобъектОблакоНорм.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/ФОНобъектПланета.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 5px); width: 90px; position: absolute;" src="Картинки/вещи/ФОНобъектСолнце.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 30px); width: 90px; position: absolute;" src="Картинки/вещи/ФОНёлки.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img id="fonch" style="transform: translate(-100px, 30px); width: 90px; position: absolute;" src="Картинки/интерфейс/фончик.png" class="load">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="popup_hard-block" class="popup popup_close">
+      <div class="popup_body">
+          <div class="popup_content">
+              <img src="" class="popup_close pcl">
+              <div class="popup_text">
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/рудауголь.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/рудазол.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/рудажелез.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/рудаалм.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_414_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_402_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_297_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_419_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_4_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_5_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_6_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_7_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_8_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_9_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_11_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_12_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_13_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_14_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_15_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_16_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_17_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_18_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_258_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_259_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_265_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_266_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_267_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_268_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_269_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_271_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_272_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_273_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_281_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_282_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_283_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_285_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_286_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_314_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_317_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_318_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_325_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_329_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_331_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_332_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_337_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_361_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_362_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_363_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_372_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_373_CLASS.png" class="load">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="popup_soft-block" class="popup popup_close">
+      <div class="popup_body">
+          <div class="popup_content">
+              <img src="" class="popup_close pcl">
+              <div class="popup_text">
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 35px); width: 90px; position: absolute;" src="Картинки/блоки/сундукдефолт.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 20px); width: 90px; position: absolute;" src="Картинки/блоки/станокдляевреев.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/сжигатель.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 20px); width: 90px; position: absolute;" src="Картинки/блоки/печка.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/паутина.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 20px); width: 90px; position: absolute;" src="Картинки/блоки/обменник.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 20px); width: 90px; position: absolute;" src="Картинки/блоки/лавка.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/кНига.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/ККО.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/батарея.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/алхим%20стол.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_420_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_407_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_390_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_389_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_388_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_387_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_386_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_384_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_383_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_382_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_381_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_371_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_357_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_339_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_335_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_334_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_313_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_299_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_298_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_293_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_291_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_290_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_289_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_378_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_377_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_376_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_375_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_374_CLASS.png" class="load">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="popup_furniture-block" class="popup popup_close">
+      <div class="popup_body">
+          <div class="popup_content">
+              <img src="" class="popup_close pcl">
+              <div class="popup_text">
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-85px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/шкафкнижный.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-85px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/трумтрумыч.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-80px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/стулэлит.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-80px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/стулжелез.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-80px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/стулдефолт.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 40px); width: 90px; position: absolute;" src="Картинки/блоки/столэлит.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 40px); width: 90px; position: absolute;" src="Картинки/блоки/столжелез.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 40px); width: 90px; position: absolute;" src="Картинки/блоки/столдефолт.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-70px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/столбгаргульи.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/совунья.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 30px); width: 90px; position: absolute;" src="Картинки/блоки/питомникэлит.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 30px); width: 90px; position: absolute;" src="Картинки/блоки/питомникдефолт.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 30px); width: 90px; position: absolute;" src="Картинки/блоки/люстраэлит.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 30px); width: 90px; position: absolute;" src="Картинки/блоки/люстражелез.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 30px); width: 90px; position: absolute;" src="Картинки/блоки/люстрадефолт.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 40px); width: 90px; position: absolute;" src="Картинки/блоки/кроватьэлит.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 40px); width: 90px; position: absolute;" src="Картинки/блоки/кроватьжелез.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 40px); width: 90px; position: absolute;" src="Картинки/блоки/кроватьдефолт.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 20px); width: 90px; position: absolute;" src="Картинки/блоки/картинамегалох.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-85px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/картиналох.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/картинаещёодна.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 25px); width: 90px; position: absolute;" src="Картинки/блоки/картинабосс.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/картина2на2.3.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/картина2на2.2.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/картина2на2.1.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-70px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/знамяяпон.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-70px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/знамячёрн.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-70px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/знамяфиол.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-70px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/знамясин.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-70px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/знамяоранж.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-70px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/знамякрас.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-70px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/знамязел.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-85px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/ёлкамини.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-85px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/ёлкабиг.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/дверьжелезоткр.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-80px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/дверьжелеззакр.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/дверьдефолтоткр.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-80px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/дверьдефолтзакр.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_342_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_303_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_302_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_301_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_300_CLASS.png" class="load">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="popup_plant-block" class="popup popup_close">
+      <div class="popup_body">
+          <div class="popup_content">
+              <img src="" class="popup_close pcl">
+              <div class="popup_text">
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-80px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/трава8.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-80px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/трава5.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-80px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/саженец5.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-80px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/саженец3.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_1121_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_1101_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_351_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_350_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); height: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_324_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_323_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_322_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_321_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_320_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_316_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_315_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_278_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_276_CLASS.png" class="load">
+                  </div>
+                  <div>
+                      <img style="border-radius: 15px; width: 110px;" src="Картинки/интерфейс/слот.png">
+                      <img style="transform: translate(-100px, 10px); width: 90px; position: absolute;" src="Картинки/блоки/Images_ITEM_275_CLASS.png" class="load">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
     <div id="popup_settings" class="popup popup_close">
         <div class="popup_body">
-            <div class="popup_content" style="min-width: 500px; text-align: center">
-                <a href="" class="popup_close pcl">✕</a>
-                <div class="popup_text">
+            <div class="popup_content" style="min-width: 500px; text-align: center;">
+                <img src="" class="popup_close pcl">
+                <div>
                     <h1 class="margin5">Настройки</h1>
-                    <input id="width" class="margin5" type="text"><span> Ширина</span><br>
-                    <input id="height" class="margin5" type="text"><span> Высота</span><br>
-                    <a href="" id="setValues">Новый рисунок</a>
+                    <div style="text-align: left; margin-left: 130px"><input id="width" class="margin5" type="text"><span> Ширина</span><br>
+                        <input id="height" class="margin5" type="text"><span> Высота</span><br>
+                        <input id="size" class="margin5" type="number" min="1" max="8"><span> Размер клетки</span><br></div>
+                    <a href="" id="setValues">Новый рисунок</a><br>
+                    <a href="" id="resetValues">Сбрость настройки</a>
+                    <h3>Звук</h3>
+                    <input id="volume" type="range" value="100" min="0" max="100" style="vertical-align: bottom; margin-bottom: 12px;">
+                    <img src="Картинки/интерфейс/пимпа.png" style="vertical-align: bottom; margin-bottom: 11px; margin-left: -5px; z-index: 0">
                 </div>
             </div>
         </div>
